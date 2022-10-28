@@ -26,7 +26,7 @@ async function loadmodel() {
 loadmodel()
 function setup() {
   createCanvas(700, 600)
-  document.getElementById("qu").value = 300
+  document.getElementById("qu").value = 700
   game = new Connect4Game()
   board = game.getInitBoard()
   let numSim = 300
