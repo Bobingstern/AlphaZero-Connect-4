@@ -21,12 +21,12 @@ function randomChoices(p, count) {
 }
 
 async function loadmodel() {
-  MODEL = await tf.loadGraphModel("https://raw.githubusercontent.com/Bobingstern/AlphaZero-Connect-4/main/c4_modelFPU_tfjs/model.json")
+  MODEL = await tf.loadGraphModel("https://raw.githubusercontent.com/Bobingstern/AlphaZero-Connect-4/main/c4_modelFPU2_tfjs/model.json")
 }
 loadmodel()
 function setup() {
   createCanvas(700, 600)
-  document.getElementById("qu").value = 200
+  document.getElementById("qu").value = 300
   game = new Connect4Game()
   board = game.getInitBoard()
   let numSim = 300
