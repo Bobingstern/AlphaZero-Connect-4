@@ -25,7 +25,7 @@ async function loadmodel() {
 }
 loadmodel()
 function setup() {
-  createCanvas(700, 600)
+  createCanvas(700/2, 600/2)
   document.getElementById("qu").value = 700
   game = new Connect4Game()
   board = game.getInitBoard()
@@ -57,13 +57,13 @@ function draw() {
       else {
         fill(255)
       }
-      circle(c * 100 + 50, r * 100 + 50, 100)
+      circle(c * 100/2 + 50/2, r * 100/2 + 50/2, 100/2)
     }
   }
 
   if (player == -1 * init_player || selfP){
     if (wait_frame){
-      console.log(game.getValidMoves(board))
+      //console.log(game.getValidMoves(board))
       let p = mcts.getActionProb(game.getCanonicalForm(board, player))
       let m = p.indexOf(Math.max(...p))
       //console.log(p)
@@ -96,7 +96,6 @@ function draw() {
     }
   }
 }
-
 
 function mouseClicked() {
   if (mouseY > height || player == -1*init_player || player == 0 || mouseY < 0 || selfP){
