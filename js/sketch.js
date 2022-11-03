@@ -97,13 +97,20 @@ function draw() {
   }
 }
 
+
 function mouseClicked() {
   if (mouseY > height || player == -1*init_player || player == 0 || mouseY < 0 || selfP){
     return
   }
-  console.log(game.getValidMoves(board))
-  let c = constrain(floor(mouseX / 100),0, 6)
+  //console.log(game.getValidMoves(board))
+  let c = constrain(floor(mouseX / 50),0, 6)
+  let va = true
+  let valids = game.getValidMoves(board)
+  if (valids[c] == 0){
+    return
+  }
   board = game.getNextState(board, player, c)[0]
+  
   player *= -1
   moves_total ++
 }
